@@ -27,6 +27,11 @@ class App extends Component {
       });
   }
 
+  updateSmurfs = newSmurfsArray => {
+    //Whenever an axios delete or put gets called state is updated with the new changes
+    this.setState({ smurfs: newSmurfsArray });
+  };
+
   addSmurf = smurf => {
     //Post Request, updates database and adds a Smurf object into array
     axios
@@ -49,7 +54,13 @@ class App extends Component {
         <Route
           path="/"
           exact
-          render={props => <Smurfs {...props} smurfs={this.state.smurfs} />}
+          render={props => (
+            <Smurfs
+              {...props}
+              updateSmurfs={this.updateSmurfs}
+              smurfs={this.state.smurfs}
+            />
+          )}
         />
         <Route
           path="/smurf-form"
