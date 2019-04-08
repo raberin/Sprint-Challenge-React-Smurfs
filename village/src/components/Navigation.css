@@ -1,0 +1,13 @@
+.navigation {
+  display: flex;
+  justify-content: center;
+}
+
+.navLinks {
+  color: maroon;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: solid 1px mediumslateblue;
+  margin-left: 2%;
+  margin-right: 2%;
+}
