@@ -4,11 +4,11 @@ import axios from "axios";
 
 const Smurf = props => {
   const deleteItem = () => {
-    console.log(`${props.name} has been deleted!`);
     axios
       .delete(`http://localhost:3333/smurfs/${props.id}`)
       .then(res => {
         props.updateSmurfs(res.data);
+        alert(`${props.name} has been deleted!`);
       })
       .catch(err => {
         console.log(err);
